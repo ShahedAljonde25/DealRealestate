@@ -1,0 +1,13 @@
+
+.vs/
+**/bin/
+**/obj/
+**/.vs/
+**/git_backup/
+**/.git_backup/
+**/packages/
+.env
+.env.*
+!.env.example
+*.user
+*.suo
