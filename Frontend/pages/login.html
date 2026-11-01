@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Real Estate | Login</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/login.css">
+    <
+
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+        <img src="../assets/images/hero.jpg" alt="Luxury House">
+    </div>
+
+    <!-- Dark Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Header Logo -->
+    <header>
+        <a href="../pages/login.html" class="logo">
+            <img src="../assets/images/logo.jpeg" alt="Deal Real Estate Logo">
+        </a>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <section class= "about Us"></section>
+    
+    </section>
+
+        <!-- Left Hero Section -->
+        <section class="hero">
+            <span class="subtitle">PREMIUM REAL ESTATE</span>
+            <h1>Find Your <br><span>Dream Home</span></h1>
+            <p>Buy, sell and discover premium properties with confidence. Experience modern real estate like never before.</p>
+        </section>
+
+        <!-- Login Card -->
+        <section class="login-card">
+
+            <div class="card-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to continue</p>
+            </div>
+
+            <form id="loginForm">
+
+                <!-- Email -->
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-envelope field-icon"></i>
+                        <input id="email" type="email" placeholder="example@email.com" required autocomplete="email">
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-box">
+                        <i class="fa-solid fa-lock field-icon"></i>
+                        <input id="password" type="password" placeholder="Enter your password" required autocomplete="current-password">
+                        <i id="togglePassword" class="fa-solid fa-eye password-toggle"></i>
+                    </div>
+                    
+
+                </div>
+
+                <!-- Options -->
+                <div class="options">
+                    <label class="remember">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <div id="errorMessage" class="alert-box" style="display: none;"></div>
+                <!-- Submit Button -->
+                <button type="submit" class="login-btn">
+                    <span>Continue</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <!-- Register Link -->
+            <div class="register">
+                Don't have an account? <a href="register.html">Create Account</a>
+            </div>
+
+        </section>
+
+    </main>
+    <div id="footer-placeholder"></div>
+    <script src="../js/pages/login.js" type="module"></script>
+    <!-- Correct JS Relative Path -->
+    <script src="../js/load_components.js"></script>
+
+
+    
+
+</body>
+
+</html>

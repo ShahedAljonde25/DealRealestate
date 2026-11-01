@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View property details and explore the property in 360°.">
+    <title>Property Details | Deal Real Estate</title>
+
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="../css/base/reset.css">
+    <link rel="stylesheet" href="../css/base/variables.css">
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/property-details.css">
+
+    <!-- A-Frame -->
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+</head>
+
+<body>
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+    <header class="property-header">
+        <a href="home.html" class="logo-link">
+            <img src="../assets/images/logo.jpeg" alt="Deal Real Estate" class="logo">
+        </a>
+
+        <nav class="property-navigation">
+            <a href="home.html">Home</a>
+            <a href="favorites.html">Favorites</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+    <main class="property-page">
+
+        <!-- =====================================
+             360° VIEWER
+        ====================================== -->
+        <section class="property-viewer" aria-label="360 degree property view">
+            <div class="viewer-header">
+                <div>
+                    <span class="viewer-label">360° EXPERIENCE</span>
+                    <h1 id="viewer-title">Property Experience</h1>
+                </div>
+
+                <button type="button" id="fullscreen-btn" class="viewer-button">
+                    Fullscreen
+                </button>
+            </div>
+
+            <!-- A-FRAME -->
+            <div id="aframe-container" class="aframe-container">
+                <a-scene embedded loading-screen="enabled: true" renderer="colorManagement: true">
+                    <a-sky id="property-panorama" rotation="0 -90 0" shader="flat"></a-sky>
+                    <a-camera id="property-camera" position="0 1.6 0" look-controls="enabled: true"></a-camera>
+                </a-scene>
+            </div>
+
+            <!-- Viewer Controls & Panoramas Switcher -->
+            <div class="viewer-controls">
+                <button type="button" id="reset-view-btn">Reset View</button>
+                <!-- حاوية لتنقُّل أزرار البانوراما للغرف المتاحة -->
+                <div id="panorama-list" class="panorama-list"></div>
+            </div>
+        </section>
+
+        <!-- =====================================
+             PROPERTY CONTENT
+        ====================================== -->
+        <section class="property-content">
+
+            <!-- PROPERTY HEADER -->
+            <div class="property-main-info">
+                <div>
+                    <span id="property-type" class="property-type">Property</span>
+                    <h2 id="property-title">Loading property...</h2>
+                    <p id="property-location" class="property-location">Loading location...</p>
+                </div>
+
+                <div class="property-price">
+                    <span>Price</span>
+                    <strong id="property-price-value">--</strong>
+                </div>
+            </div>
+
+            <!-- =================================
+                 PROPERTY FEATURES
+            ================================== -->
+            <div class="property-features">
+                <div class="property-feature">
+                    <span class="feature-icon">🏠</span>
+                    <div>
+                        <span>Type</span>
+                        <strong id="feature-type">--</strong>
+                    </div>
+                </div>
+
+                <div class="property-feature">
+                    <span class="feature-icon">📐</span>
+                    <div>
+                        <span>Area</span>
+                        <strong id="feature-area">--</strong>
+                    </div>
+                </div>
+
+                <div class="property-feature">
+                    <span class="feature-icon">🛏️</span>
+                    <div>
+                        <span>Bedrooms</span>
+                        <strong id="feature-bedrooms">--</strong>
+                    </div>
+                </div>
+
+                <div class="property-feature">
+                    <span class="feature-icon">🚿</span>
+                    <div>
+                        <span>Bathrooms</span>
+                        <strong id="feature-bathrooms">--</strong>
+                    </div>
+                </div>
+
+                <div class="property-feature">
+                    <span class="feature-icon">🏢</span>
+                    <div>
+                        <span>Floor</span>
+                        <strong id="feature-floor">--</strong>
+                    </div>
+                </div>
+
+                <div class="property-feature">
+                    <span class="feature-icon">🏗️</span>
+                    <div>
+                        <span>Year Built</span>
+                        <strong id="feature-year">--</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- =================================
+                 AMENITIES (مطابقة لحقول الـ API)
+            ================================== -->
+            <section class="property-section">
+                <h3>Amenities & Facilities</h3>
+                <div id="property-amenities" class="property-amenities">
+                    <span id="amenity-garage" class="amenity-tag hidden">🚗 Garage</span>
+                    <span id="amenity-pool" class="amenity-tag hidden">🏊 Swimming Pool</span>
+                    <span id="amenity-garden" class="amenity-tag hidden">🏡 Garden</span>
+                    <span id="amenity-furnished" class="amenity-tag hidden">🛋️ Furnished</span>
+                </div>
+            </section>
+
+            <!-- =================================
+                 DESCRIPTION
+            ================================== -->
+            <section class="property-section">
+                <h3>About this property</h3>
+                <p id="property-description">Loading property description...</p>
+            </section>
+
+            <!-- =================================
+                 PROPERTY IMAGES
+            ================================== -->
+            <section class="property-section">
+                <div class="section-heading">
+                    <h3>Property Photos</h3>
+                    <span id="image-count">0 Photos</span>
+                </div>
+                <div id="property-gallery" class="property-gallery">
+                    <!-- Images generated by JS -->
+                </div>
+            </section>
+
+            <!-- =================================
+                 OWNER
+            ================================== -->
+            <section class="property-section owner-section">
+                <h3>Property Owner</h3>
+                <div class="owner-card">
+                    <div class="owner-avatar">
+                        <span id="owner-initial">U</span>
+                    </div>
+                    <div class="owner-info">
+                        <strong id="owner-name">Loading...</strong>
+                        <span>Property Owner</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =================================
+                 ACTIONS
+            ================================== -->
+            <section class="property-actions">
+                <button type="button" id="favorite-btn" class="action-button favorite-button">
+                    <span>♡</span> Add to Favorites
+                </button>
+                <button type="button" id="request-btn" class="action-button request-button">
+                    Request Property
+                </button>
+            </section>
+
+        </section>
+    </main>
+
+    <!-- =========================================
+         REQUEST MODAL
+    ========================================== -->
+    <div id="request-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" id="close-modal-btn" class="modal-close" aria-label="Close">×</button>
+            <h2>Request this property</h2>
+            <p>Send a request to the property owner.</p>
+            <form id="property-request-form">
+                <label for="request-message">Message</label>
+                <textarea id="request-message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+                <button type="submit" class="request-submit">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- =========================================
+         FOOTER PLACEHOLDER
+    ========================================== -->
+    <div id="footer-placeholder"></div>
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+    <script src="../js/load_components.js"></script>
+    <script type="module" src="../js/services/api.js"></script>
+    <script type="module" src="../js/services/auth.js"></script>
+    <script type="module" src="../js/pages/property-details.js"></script>
+</body>
+
+</html>

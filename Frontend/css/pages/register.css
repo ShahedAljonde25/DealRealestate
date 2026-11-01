@@ -1,0 +1,438 @@
+/* ==========================================
+   REGISTER PAGE - UI/UX REFINED
+========================================== */
+
+
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    background: #081511;
+    font-family: var(--body-font, 'Inter', sans-serif);
+}
+
+
+/* ==========================================
+   BACKGROUND & OVERLAY (فصل بصري للعمق)
+========================================== */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+}
+
+.background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.9);
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    /* تدرج لون داكن نقي يمنع تداخل الخلفية مع محتوى النصوص */
+    background: linear-gradient(
+        100deg,
+        rgba(6, 18, 12, 0.94) 0%,
+        rgba(6, 18, 12, 0.78) 50%,
+        rgba(6, 18, 12, 0.65) 100%
+    );
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.register-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px clamp(24px, 5vw, 60px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.register-header .logo {
+    width: 125px;
+    max-height: 40px;
+    object-fit: contain;
+}
+
+.back-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    transition: all 0.25s ease;
+    text-decoration: none;
+}
+
+.back-login:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(-3px);
+}
+
+
+/* ==========================================
+   MAIN CONTAINER
+========================================== */
+
+.register-page {
+    min-height: 100vh;
+    width: min(1300px, 92%);
+    margin: auto;
+    padding: 110px 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(40px, 6vw, 90px);
+}
+
+
+/* ==========================================
+   INTRO SECTION (اليسار)
+========================================== */
+
+.register-intro {
+    flex: 1;
+    max-width: 540px;
+    color: #ffffff;
+}
+
+.subtitle {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: var(--accent, #a7d7b5);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.register-intro h1 {
+    margin-bottom: 20px;
+    font-family: var(--heading-font, sans-serif);
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.register-intro h1 span {
+    color: var(--accent, #a7d7b5);
+}
+
+.register-intro > p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    line-height: 1.75;
+}
+
+
+/* ==========================================
+   FEATURES
+========================================== */
+
+.intro-features {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+.intro-feature {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13.5px;
+}
+
+.intro-feature i {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: var(--accent, #a7d7b5);
+    background: rgba(167, 215, 181, 0.1);
+    border: 1px solid rgba(167, 215, 181, 0.18);
+}
+
+
+/* ==========================================
+   REGISTER CARD (بطاقة الإدخال اليمنى - فصل تبايني تام)
+========================================== */
+
+.register-card {
+    flex: 0 1 450px;
+    width: 100%;
+    padding: clamp(26px, 3.5vw, 36px);
+    border-radius: 24px;
+    /* خلفية بيضاء ناصعة وغير شفافة لضمان عدم تداخل خلفية الصورة مع الحقول */
+    background: #ffffff;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ==========================================
+   CARD HEADER
+========================================== */
+
+.card-header {
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.card-header h2 {
+    margin-bottom: 6px;
+    color: #111827;
+    font-family: var(--heading-font, sans-serif);
+    font-size: clamp(1.5rem, 2.2vw, 1.85rem);
+    font-weight: 700;
+}
+
+.card-header p {
+    color: #1f2937; /* رمادي داكن قليلاً لزيادة الوضوح والأناقة */
+    font-size: 13.5px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+
+/* ==========================================
+   INPUT GROUP & BOX (تحسين وضوح الحقول)
+========================================== */
+
+.input-group {
+    margin-bottom: 14px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.input-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 12px;
+    background: #f9fafb; /* لون خلفية خفيف للحقل ليفصله عن البطاقة البيضاء */
+    transition: all 0.2s ease;
+}
+
+.input-box > i:first-child {
+    margin-left: 14px;
+    width: 16px;
+    color: #9ca3af;
+    transition: color 0.2s ease;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    padding: 0 40px 0 12px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #1f2937;
+    font-size: 13.5px;
+}
+
+.input-box input::placeholder {
+    color: #9ca3af;
+}
+
+/* حالة التركيز (Focus State) بوضوح عالٍ */
+.input-box:focus-within {
+    border-color: #0f8c4d;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(15, 140, 77, 0.12);
+}
+
+.input-box:focus-within > i:first-child {
+    color: #0f8c4d;
+}
+
+
+/* ==========================================
+   PASSWORD TOGGLE
+========================================== */
+
+.password-toggle {
+    position: absolute;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+    color: #0f8c4d;
+}
+
+
+/* ==========================================
+   TERMS
+========================================== */
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin: 16px 0 18px;
+    color: #4b5563;
+    font-size: 11.5px;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.terms input {
+    margin-top: 2px;
+    accent-color: #0f8c4d;
+    cursor: pointer;
+}
+
+.terms a {
+    color: #0f8c4d;
+    font-weight: 600;
+}
+
+
+/* ==========================================
+   REGISTER BUTTON
+========================================== */
+
+.register-btn {
+    width: 100%;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    border-radius: 12px;
+    background: #0f8c4d;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(15, 140, 77, 0.25);
+    transition: all 0.2s ease;
+}
+
+.register-btn:hover {
+    background: #0b6b3b;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(15, 140, 77, 0.35);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   LOGIN LINK
+========================================== */
+
+.login-link {
+    margin-top: 18px;
+    text-align: center;
+    color: #6b7280;
+    font-size: 12.5px;
+}
+
+.login-link a {
+    color: #0f8c4d;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+.register-message {
+    display: none;
+    margin-bottom: 15px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    text-align: center;
+}
+
+.register-message.show {
+    display: block;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 992px) {
+    .register-page {
+        width: min(520px, 92%);
+        justify-content: center;
+    }
+    .register-intro {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .register-header {
+        padding: 16px 20px;
+    }
+    .register-header .logo {
+        width: 110px;
+    }
+    .back-login {
+        padding: 8px 12px;
+        font-size: 11.5px;
+    }
+    .register-page {
+        width: 94%;
+        padding: 85px 0 30px;
+    }
+    .register-card {
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+}

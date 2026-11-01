@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Deal Real Estate | Create Account</title>
+
+    <!-- Fonts -->  
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Global CSS -->
+
+    <link rel="stylesheet"
+          href="../css/pages/register.css">
+    <link rel="stylesheet"
+          href="../css/style.css">
+
+    <!-- Register CSS -->
+    <link rel="stylesheet" href="../css/pages/register.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+
+    <div class="background">
+
+        <img src="../assets/images/hero.jpg" alt="Luxury Property">
+
+             
+
+    </div>
+
+    <div class="overlay"></div>
+
+
+    <!-- Header -->
+
+    <header class="register-header">
+
+        <a href="index.html">
+
+            <img src="../assets/images/logo.jpeg" alt="Deal Real Estate"
+                 class="logo">
+
+        </a>
+
+        <a href="login.html"
+           class="back-login">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Login
+
+        </a>
+
+    </header>
+
+
+    <!-- Main -->
+
+    <main class="register-page">
+
+        <!-- Information Side -->
+
+        <section class="register-intro">
+
+            <span class="subtitle">
+
+                DEAL REAL ESTATE
+
+            </span>
+
+            <h1>
+
+                Your next
+                <span>chapter</span>
+                starts here.
+
+            </h1>
+
+            <p>
+
+                Create your account and discover
+                properties that feel like home.
+
+            </p>
+
+            <div class="intro-features">
+
+                <div class="intro-feature">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>
+                        Discover properties
+                    </span>
+
+                </div>
+
+                <div class="intro-feature">
+
+                    <i class="fa-solid fa-heart"></i>
+
+                    <span>
+                        Save your favorites
+                    </span>
+
+                </div>
+
+                <div class="intro-feature">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span>
+                        Secure account
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Register Card -->
+
+        <section class="register-card">
+
+            <div class="card-header">
+
+                <h2>
+                    Create Account
+                </h2>
+
+                <p>
+                    Start your real estate journey
+                </p>
+
+            </div>
+
+
+            <!-- Error / Success Message -->
+
+            <div id="registerMessage"
+                 class="register-message">
+
+            </div>
+
+
+            <form id="registerForm">
+
+
+                <!-- Name -->
+
+                <div class="input-group">
+
+                    <label for="name">
+
+                        Full Name
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                            id="name"
+                            name="name"
+                            type="text"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="input-group">
+
+                    <label for="email">
+
+                        Email Address
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            placeholder="example@email.com"
+                            autocomplete="email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <label for="password">
+
+                        Password
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            placeholder="Create a password"
+                            autocomplete="new-password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="togglePassword"
+                            aria-label="Show password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="input-group">
+
+                    <label for="confirmPassword">
+
+                        Confirm Password
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            id="confirmPassword"
+                            name="confirmPassword"
+                            type="password"
+                            placeholder="Repeat your password"
+                            autocomplete="new-password"
+                            required>
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="toggleConfirmPassword"
+                            aria-label="Show password">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <label class="terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                        required>
+
+                    <span>
+
+                        I agree to the
+                        <a href="#">
+                            Terms of Service
+                        </a>
+                        and
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+
+                    </span>
+
+                </label>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="register-btn"
+                    id="registerBtn">
+
+                    <span>
+                        Create Account
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- Login -->
+
+            <div class="login-link">
+
+                Already have an account?
+
+                <a href="login.html">
+
+                    Sign In
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+<script src="../js/pages/register.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+/* General Layout */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+    margin: 0;
+    color: #1e293b;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Navbar */
+.main-header {
+    background: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #0f8c4d;
+    text-decoration: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #0f8c4d;
+}
+
+/* Featured / Favorites Section */
+.featured-section {
+    padding: 40px 0;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+.section-title p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Grid Layout متناسق تماماً مثل الـ Home */
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* تصميم الكارد المطابق للطلب */
+.property-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* تنسيق الصورة بارتفاع ثابت وعرض مانع للمط (object-fit) */
+.property-img {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.property-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.property-card:hover .property-img img {
+    transform: scale(1.05);
+}
+
+/* زر إزالة المفضلة (القلب) المدمج أعلى الصورة */
+.btn-remove-favorite {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #dc3545;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background 0.2s;
+    z-index: 10;
+}
+
+.btn-remove-favorite:hover {
+    background: #ffffff;
+    transform: scale(1.1);
+}
+
+/* تنسيق محتوى الكارد (Property Info) */
+.property-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.property-info h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #1e293b;
+}
+
+.property-info p {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* أسفل الكارد (السعر وزر التفاصيل) */
+.property-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.price {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #0f8c4d;
+    font-size: 16px;
+}
+
+.details-btn {
+    text-decoration: none;
+    background: #f1f5f9;
+    color: #1e293b;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.3s, color 0.3s;
+}
+
+.details-btn:hover {
+    background: #0f8c4d;
+    color: white;
+}

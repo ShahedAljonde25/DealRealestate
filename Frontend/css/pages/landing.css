@@ -1,0 +1,845 @@
+/* ==========================================
+   LANDING PAGE STYLES
+========================================== */
+
+:root {
+    --landing-green: #0f8c4d;
+    --landing-green-dark: #096b3a;
+    --landing-green-light: #eaf7f0;
+
+    --landing-dark: #14231d;
+    --landing-text: #33443d;
+    --landing-muted: #718078;
+
+    --landing-bg: #f7faf8;
+    --landing-white: #ffffff;
+
+    --landing-border: #e1e9e4;
+
+    --landing-radius: 18px;
+
+    --landing-focus-ring: 0 0 0 3px rgba(15, 140, 77, 0.35);
+}
+
+/* ==========================================
+   ACCESSIBILITY / FOUNDATIONS
+========================================== */
+
+.skip-link {
+    position: absolute;
+    top: -48px;
+    left: 16px;
+    z-index: 100;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: var(--landing-dark);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.opportunity-card:focus-visible,
+.text-link:focus-visible {
+    outline: none;
+    box-shadow: var(--landing-focus-ring);
+    border-radius: 10px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* ==========================================
+   GENERAL & BUTTONS
+========================================== */
+
+.landing-section {
+    padding: 100px 0;
+    background: var(--landing-white);
+}
+
+.section-heading {
+    max-width: 680px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin: 10px 0 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.15;
+    color: var(--landing-dark);
+}
+
+.section-heading p {
+    color: var(--landing-muted);
+    line-height: 1.7;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--landing-green);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--landing-green);
+    color: white;
+    box-shadow: 0 10px 25px rgba(15, 140, 77, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--landing-green-dark);
+}
+
+.btn-light {
+    background: white;
+    color: var(--landing-dark);
+}
+
+.btn-white {
+    background: white;
+    color: var(--landing-green);
+}
+
+.btn-outline-white {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    color: white;
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.landing-hero {
+    position: relative;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    background: url("../../assets/images/hero.jpg") center / cover no-repeat;
+    color: white;
+}
+
+.landing-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(8, 27, 18, 0.82),
+        rgba(8, 27, 18, 0.42),
+        rgba(8, 27, 18, 0.2)
+    );
+}
+
+.landing-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 80px;
+}
+
+.hero-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    padding: 8px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    font-size: 13px;
+}
+
+.landing-hero h1 {
+    max-width: 800px;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+}
+
+.landing-hero h1 span {
+    display: block;
+    color: #bcebd0;
+}
+
+.landing-hero p {
+    max-width: 620px;
+    margin: 25px 0 32px;
+    color: #e5eee9;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 65px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.hero-stats strong {
+    font-family: "Poppins", sans-serif;
+    font-size: 22px;
+}
+
+.hero-stats span {
+    color: #c9d7d0;
+    font-size: 12px;
+}
+
+/* ==========================================
+   OPPORTUNITIES
+========================================== */
+
+.opportunity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.opportunity-card {
+    position: relative;
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 28px;
+    border: 1px solid var(--landing-border);
+    border-radius: var(--landing-radius);
+    background: white;
+    color: var(--landing-dark);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(15, 140, 77, 0.35);
+    box-shadow: 0 20px 45px rgba(20, 35, 29, 0.1);
+}
+
+.opportunity-card:hover .opportunity-icon {
+    transform: scale(1.08);
+}
+
+.opportunity-large {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--landing-green), var(--landing-green-dark));
+    color: white;
+    border: none;
+}
+
+.opportunity-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    background: var(--landing-green-light);
+    color: var(--landing-green);
+    font-size: 20px;
+    transition: transform 0.25s ease;
+}
+
+.opportunity-large .opportunity-icon {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.opportunity-card h3 {
+    margin: 0 0 9px;
+    font-family: "Poppins", sans-serif;
+    font-size: 19px;
+}
+
+.opportunity-card p {
+    max-width: 420px;
+    margin: 0;
+    color: var(--landing-muted);
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.opportunity-large p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card-arrow {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: var(--landing-green);
+    transition: transform 0.25s ease;
+}
+
+.opportunity-card:hover .card-arrow {
+    transform: translate(2px, -2px);
+}
+
+.opportunity-large .card-arrow {
+    color: white;
+}
+
+/* ==========================================
+   WHY DEAL
+========================================== */
+
+.why-section {
+    padding: 100px 0;
+    background: var(--landing-bg);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.why-content h2 {
+    margin: 12px 0 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+}
+
+.why-content h2 span {
+    color: var(--landing-green);
+}
+
+.why-content > p {
+    max-width: 470px;
+    color: var(--landing-muted);
+    line-height: 1.8;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 20px;
+    color: var(--landing-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: gap 0.2s ease;
+}
+
+.text-link:hover {
+    gap: 13px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.feature-box {
+    padding: 28px;
+    border: 1px solid var(--landing-border);
+    border-radius: var(--landing-radius);
+    background: white;
+}
+
+.feature-icon {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    background: var(--landing-green-light);
+    color: var(--landing-green);
+}
+
+.feature-box h3 {
+    margin-bottom: 8px;
+    font-size: 17px;
+}
+
+.feature-box p {
+    margin: 0;
+    color: var(--landing-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   360 EXPERIENCE (FIXED)
+========================================== */
+
+.vr-section {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 60px;
+    align-items: center;
+    padding: 55px;
+    border-radius: 25px;
+    background: var(--landing-dark);
+    color: white;
+    overflow: hidden;
+}
+
+.vr-content h2 {
+    margin: 12px 0 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(30px, 4vw, 45px);
+    line-height: 1.15;
+}
+
+.vr-content h2 span {
+    color: #8ed8ad;
+}
+
+.vr-content p {
+    max-width: 470px;
+    margin-bottom: 28px;
+    color: #aebdb5;
+    line-height: 1.8;
+}
+
+/* حاوية المعاينة الخاصة بـ VR */
+.vr-preview {
+    position: relative;
+    min-height: 390px;
+    height: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #1e3028;
+    isolation: isolate;
+    cursor: grab;
+}
+
+.vr-preview:active {
+    cursor: grabbing;
+}
+
+/* تمدد المشهد والـ Canvas */
+.vr-preview a-scene,
+.vr-preview canvas {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    pointer-events: auto !important;
+}
+
+/* إصلاح التدرج الداكن (::after) لكي لا يحجب الماوس */
+.vr-preview::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(8, 20, 14, 0.8),
+        transparent 55%
+    );
+    pointer-events: none !important; /* يسمح بمرور حركة الماوس للـ Canvas */
+    z-index: 1;
+}
+
+/* النص والأيقونة فوق المشهد */
+.vr-preview-content {
+    position: absolute;
+    z-index: 2;
+    left: 25px;
+    bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #ffffff;
+    pointer-events: none !important; /* يمنع النص والأيقونة من حجب الماوس */
+}
+
+/* إخفاء شعار VR الافتراضي الخاص بـ A-Frame */
+.a-enter-vr,
+.a-orientation-modal {
+    display: none !important;
+}
+
+/* ==========================================
+   ABOUT
+========================================== */
+
+.about-section {
+    padding: 100px 0;
+    background: var(--landing-bg);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-image {
+    height: 500px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content h2 {
+    margin: 12px 0 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.1;
+}
+
+.about-content h2 span {
+    color: var(--landing-green);
+}
+
+.about-content p {
+    color: var(--landing-muted);
+    line-height: 1.8;
+}
+
+/* ==========================================
+   SERVICES
+========================================== */
+
+.services-section {
+    background: var(--landing-bg);
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0 48px;
+}
+
+.service-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--landing-border);
+}
+
+.service-row > i {
+    flex-shrink: 0;
+    margin-top: 4px;
+    color: var(--landing-green);
+    font-size: 18px;
+}
+
+.service-row h3 {
+    margin: 0 0 6px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+}
+
+.service-row p {
+    margin: 0;
+    color: var(--landing-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ==========================================
+   HOW IT WORKS
+========================================== */
+
+.steps-section {
+    padding: 100px 0;
+    background: var(--landing-white);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    position: relative;
+}
+
+.step {
+    position: relative;
+    padding: 35px;
+    border-radius: var(--landing-radius);
+    background: white;
+    border: 1px solid var(--landing-border);
+}
+
+.step-number {
+    display: block;
+    margin-bottom: 25px;
+    color: var(--landing-green);
+    font-family: "Poppins", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+}
+
+.step p {
+    margin: 0;
+    color: var(--landing-muted);
+    line-height: 1.7;
+}
+
+/* ==========================================
+   FINAL CTA
+========================================== */
+
+.final-cta {
+    padding: 110px 0;
+    background: linear-gradient(135deg, var(--landing-green), var(--landing-green-dark));
+    color: white;
+    text-align: center;
+}
+
+.final-cta .section-label {
+    color: #bcebd0;
+}
+
+.final-cta h2 {
+    max-width: 850px;
+    margin: 15px auto;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(32px, 5vw, 55px);
+    line-height: 1.1;
+}
+
+.final-cta h2 span {
+    display: block;
+    color: #bcebd0;
+}
+
+.final-cta p {
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cta-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 1000px) {
+    .landing-section,
+    .why-section,
+    .about-section,
+    .steps-section {
+        padding: 75px 0;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .vr-section {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-image {
+        height: 400px;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .opportunity-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .opportunity-large {
+        grid-column: span 2;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .landing-hero {
+        min-height: 650px;
+    }
+
+    .landing-hero-content {
+        padding-top: 60px;
+    }
+
+    .landing-hero h1 {
+        font-size: 42px;
+        letter-spacing: -1px;
+    }
+
+    .landing-hero p {
+        font-size: 15px;
+    }
+
+    .hero-stats {
+        gap: 22px;
+        margin-top: 45px;
+    }
+
+    .hero-stats strong {
+        font-size: 18px;
+    }
+
+    .hero-stats span {
+        font-size: 10px;
+    }
+
+    .opportunity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .opportunity-large {
+        grid-column: auto;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .vr-section {
+        padding: 30px 22px;
+        border-radius: 18px;
+    }
+
+    .vr-preview {
+        min-height: 280px;
+    }
+
+    .about-image {
+        height: 300px;
+    }
+
+    .final-cta {
+        padding: 80px 20px;
+    }
+}
+
+
+
+
+@media (max-width: 480px) {
+    .landing-hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .landing-section,
+    .why-section,
+    .about-section,
+    .steps-section {
+        padding: 60px 0;
+    }
+
+
+    
+
+    .opportunity-card {
+        min-height: 210px;
+        padding: 23px;
+    }
+
+    .feature-box,
+    .step {
+        padding: 25px;
+    }
+
+    .service-row {
+        padding: 18px 0;
+    }
+
+    .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

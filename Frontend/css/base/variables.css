@@ -1,0 +1,44 @@
+:root{
+
+    /* Brand */
+
+    --primary:#0F8C4D;
+
+    --primary-hover:#0A6F3C;
+
+    --dark:#173B2A;
+
+    /* Background */
+
+    --background:#F8FAF8;
+
+    --white:#FFFFFF;
+
+    --border:#E3E9E5;
+
+    /* Text */
+
+    --text:#2F3A34;
+
+    --text-light:#738276;
+
+    /* Status */
+
+    --success:#23A55A;
+
+    --warning:#F2A900;
+
+    --danger:#D64545;
+
+    /* Radius */
+
+    --radius:18px;
+
+    /* Shadow */
+
+    --shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+.aframe-container {
+    height: min(72vh, 760px);
+}

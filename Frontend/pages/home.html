@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Real Estate | Home</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pages/home.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Hero Section with Search -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Find a place that feels like home</h1>
+            
+            <!-- Search Bar Form -->
+            <form class="search-bar" id="searchForm">
+                <div class="search-input-group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="searchLocation" placeholder="Location (e.g. Amman, Dabouq)">
+                </div>
+                <div class="search-input-group">
+                    <i class="fa-solid fa-house"></i>
+                    <select id="searchType">
+                        <option value="">Property Type</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Land">Land</option>
+                    </select>
+                </div>
+                <button type="submit" class="search-btn">
+                    <i class="fa-solid fa-search"></i> Search
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <!-- Featured Properties Section -->
+<section class="featured-section container">
+    <div class="section-title">
+        <h2>Featured Properties</h2>
+        <p>Explore our handpicked selection of top properties</p>
+    </div>
+
+    <!-- شبكة عرض العقارات -->
+    <div class="properties-grid" id="propertiesGrid">
+        <!-- حالة التحميل الافتراضية داخل الشبكة -->
+        <div class="loading-state" style="grid-column: 1 / -1; text-align: center; padding: 50px; color: #64748b;">
+            <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+            <p style="margin-top: 10px;">Loading properties from database...</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
+    <!-- JavaScript File -->
+    <script src="../js/pages/home.js" type="module"></script>
+    <script src="../js/load_components.js"></script>
+</body>
+</html>
