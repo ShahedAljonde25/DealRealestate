@@ -1,63 +1,148 @@
-# Deal Real Estate 🏡
+# Deal Real Estate
 
-**Deal Real Estate** is a real estate platform focused on land listings in West Amman and Dabouq, Jordan. The project aims to provide a structured way to manage property listings and help users explore available real estate opportunities.
+## About the Project
 
-## 🎯 Project Overview
+Deal Real Estate is a web application for buying and selling land in Jordan, mainly in West Amman and Dabouq.
 
-The platform is designed to support real estate listing management, user authentication, and communication between users through a structured backend architecture.
+The system allows users to view land listings, explore property details, save favorite properties, and communicate with other users.
 
-## ✨ Key Features
+The project has a backend built with ASP.NET Core Web API and a frontend built with HTML, CSS, and JavaScript.
 
-- **User Authentication** — Registration, login, and token-based authentication.
-- **Property Management** — Manage property listings and their details.
-- **Favorites** — Save properties for quick access.
-- **Messaging** — Support communication between users.
-- **Property Media** — Support for property images and panoramic media.
-- **REST API** — Organized endpoints for application functionality.
-- **User Sessions** — Session and refresh-token management.
+## Main Features
 
-## 🛠️ Tech Stack
+- User registration and login.
+- Secure user authentication.
+- View available land listings.
+- Add, update, and delete property listings.
+- View property details.
+- Add properties to favorites.
+- Send and receive messages.
+- Upload and view property images.
+- Support for panoramic property media.
+- Control user access based on roles and permissions.
+- Connect the frontend with the backend using RESTful APIs.
 
+## Technologies Used
+
+### Backend
 - C#
 - ASP.NET Core Web API
 - .NET 8
 - SQL Database
-- RESTful API Architecture
+- RESTful APIs
+- JSON
+- DTOs
+- JWT Authentication
+- Role-Based Authorization
+- Policy-Based Authorization
+- Refresh Tokens
+- Rate Limiting
+- Logging and Auditing
 
-## 🏗️ Architecture
+### Frontend
+- HTML
+- CSS
+- JavaScript
 
-The project follows a layered architecture to separate responsibilities:
+## Backend Implementation
 
-- **API Layer:** Handles HTTP requests and API endpoints.
-- **Business Layer:** Contains application business logic.
-- **Data Access Layer:** Handles data operations.
-- **Models & DTOs:** Represent application entities and data transfer objects.
+The backend was developed using ASP.NET Core Web API and C#.
 
-## 🚀 Getting Started
+The project uses RESTful API principles to connect the frontend with the backend.
 
-### Prerequisites
+### RESTful API
 
-- .NET 8 SDK
-- Visual Studio 2022 or another compatible IDE
-- A configured SQL database
+The backend includes:
 
-### Setup
+- GET: Get data from the server.
+- POST: Send new data to the server.
+- PUT: Update existing data.
+- DELETE: Delete data.
 
-1. Clone the repository.
-2. Open `DVLDV.sln` in Visual Studio.
-3. Configure your database connection and application secrets locally.
-4. Restore NuGet packages.
+Other implemented concepts include:
+
+- JSON and XML data formats.
+- HTTP status codes.
+- Request and response handling.
+- DTOs for data transfer.
+- File upload and retrieval.
+- Client-server communication.
+- Three-tier architecture.
+
+### Security
+
+The project includes different security features:
+
+- **JWT Authentication:** Verify users when they log in.
+- **Role-Based Authorization:** Give users access based on their roles.
+- **Policy-Based Authorization:** Apply specific access rules.
+- **Ownership-Based Authorization:** Allow users to access or manage their own resources.
+- **Refresh Tokens:** Support user sessions and token renewal.
+- **Rate Limiting:** Limit the number of requests to the API.
+- **Logging and Auditing:** Record important system activities.
+
+These features help protect the API and control access to system resources.
+
+## Project Architecture
+
+The backend uses a layered architecture to organize the code and separate responsibilities.
+
+Main parts include:
+
+- **API Layer:** Receives HTTP requests and sends responses.
+- **Business Layer:** Handles business rules and application logic.
+- **Data Access Layer:** Handles database operations.
+- **Models and DTOs:** Define application data and transfer data between layers.
+
+This structure makes the code easier to manage, understand, and update.
+
+## Project Structure
+
+```text
+DealRealestate/
+│
+├── BusinessLayer/
+├── Connection/
+├── DataAccess/
+├── DataAccsessLayer/
+├── DataLayer/
+├── DealRealState.API/
+├── DealRealState.DTOs/
+├── DTOs/
+├── Models/
+│
+├── Frontend/
+│
+├── DVLDV.sln
+├── DataLayer.sln
+├── .gitignore
+└── README.md
+```
+
+*Note: This structure shows the main project folders. Some additional files and folders may exist.*
+
+## How to Run the Project
+
+### Backend
+
+1. Open the project using Visual Studio.
+2. Open `DVLDV.sln`.
+3. Configure the database connection.
+4. Restore the NuGet packages.
 5. Build the solution.
-6. Run the `DealRealState.API` project.
+6. Run the ASP.NET Core Web API project.
 
-## 🔐 Security
+### Frontend
 
-Sensitive configuration values, including database passwords and authentication secrets, should be stored securely and never committed to the repository.
+1. Open the `Frontend` folder.
+2. Open `index.html` in your browser.
 
-## 📌 Project Status
+## Project Goal
 
-Under development.
+The goal of this project is to build a real estate web application using modern web development technologies.
 
----
+It combines backend development, frontend development, database operations, RESTful APIs, and API security in one practical project.
 
-**Deal Real Estate** — Real estate management focused on West Amman and Dabouq, Jordan.
+## Project Status
+
+The project is under development. New features and improvements may be added.
